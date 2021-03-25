@@ -19,15 +19,16 @@ int main()
       else
        i++;
   }
-  for(i=0;s[i]!=0;i++)
+ int e = s[0];
+ for(i=0;s[i]!=0;i++)
   {
-     if(s[i]==s[i+1]&&s[i]!=0)
+     if(s[i]==e)
          k++;
   }
-  if(k==j-1&&k>1)
+  if(k>2)
     printf("Not Cube Free");
   else
-    printf("yes");
+    printf("%d",num);
 
   return 0;
 }

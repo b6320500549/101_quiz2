@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-  int num,i,j=0,k=0;;
+  int m,num,i,j=0,k=0,a;
   int s[100];
   scanf("%d",&num);
   for(i=0;i<100;i++)
@@ -10,19 +10,23 @@ int main()
   }
   for(i=2;num!=1;)
   {
+      if(num%i==0)
+      {
       num=num/i;
       s[j]=i;
-      if(num%i!=0)
-       i++;
       j++;
+      }
+      else
+       i++;
   }
-  printf("%d",j);
   for(i=0;s[i]!=0;i++)
   {
-     if(s[i]==s[i+1])
-        k++;
+     if(s[i]==s[i+1]&&s[i]!=0)
+         k++;
   }
-  if(k==j-1)
+  if(k==j-1&&k>1)
+    printf("Not Cube Free");
+  else
     printf("yes");
 
   return 0;
